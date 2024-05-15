@@ -18,7 +18,8 @@ import { Cron, ScheduleModule, CronExpression } from '@nestjs/schedule';
 })
 export class AppModule {
   @Cron(CronExpression.EVERY_10_MINUTES)
-  test() {
-    console.log('test');
+  async test() {
+    const res = await fetch('https://nest-auth-vglw.onrender.com');
+    console.log({ res: await res.text() });
   }
 }
