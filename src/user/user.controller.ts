@@ -11,9 +11,9 @@ import {
 import { UserService } from '../user/user.service';
 import { CreateUserDto } from '../user/dto/create-user.dto';
 import { UpdateUserDto } from '../user/dto/update-user.dto';
-import { AuthGuard } from 'src/auth/auth.guard';
+import { AccessTokenGuard } from 'src/auth/access-token.guard';
 
-@UseGuards(AuthGuard)
+@UseGuards(AccessTokenGuard)
 @Controller('users')
 export class UserController {
   constructor(private readonly userService: UserService) {}
